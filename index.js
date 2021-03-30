@@ -35,17 +35,18 @@ const vacinarPets = (pet) => {
 
 }
 
-const campanhaVacina = (pets) => {
-    var vacinados = 0;
-    for (let pet of pets) {
-        if (!pet.vacinado)
+const campanhaVacina = () => {
+    let vacinados = 0;
+    bd.pets = bd.pets.map((pet) => {
+        if (!pet.vacinado) {
             vacinados++;
-        vacinarPets(pet);
-    }
+            vacinarPets(pet);
+        }
+        return pet;
+    });
     console.log(`Pets vacinados na campanha: ${vacinados}`);
-}
 
-campanhaVacina(pets);
+}
 
 console.log("Novo Cliente: ");
 const insereCliente = (nome, tipo, idade, raca, tutor, contato, vacinado) => {
@@ -107,3 +108,30 @@ console.log();
 console.log(" - Atender Cliente: - ");
 atenderCliente(pets[0], apararUnhasPet);
 atenderCliente(pets[2], apararUnhasPet);
+
+const buscarPet = (nomePet) => {
+    let petEcontrado = bd.pets.find((pet) => {
+        return pet.nome == nomePet;
+    });
+
+    return petEcontrado ? petEcontrado : `Não foi encontrado nenhum pet com esse nome ${nomePet}`;
+}
+
+const filtrarPet = (tipoPet) => {
+    let petsEncontrados = bd.pets.filter((pet) => {
+        return pet.tipo == tipoPet;
+    });
+    return petsEncontrados;
+}
+
+const clientePremium = (pet) => {
+    let nServicos = pet.servicos.length;
+
+    if (nServicos > 5) {
+        console.log(`Cliente especial!!, ${pet.nome}Você ganhou um desconto.`);
+
+    } else {
+        console.log(`Cliente, ${pet.nome}você ainda não tem descontos.`);
+
+    }
+}
