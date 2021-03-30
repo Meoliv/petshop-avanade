@@ -1,0 +1,44 @@
+{
+    "pets": [{
+            "nome": "Luna",
+            "tipo": "Cachorro",
+            "idade": 2,
+            "raca": "Pastor Alemão",
+            "peso": 3,
+            "tutor": "Mel",
+            "contato": "(87)0000-0000",
+            "vacinado": true,
+            "servicos": [
+                "banho",
+                "tosa"
+            ]
+        },
+        {
+            "nome": "Lion",
+            "tipo": "Gato",
+            "idade": 3,
+            "raca": "Persa",
+            "peso": 2,
+            "tutor": "Mel",
+            "contato": "(87)0000-0000",
+            "vacinado": true,
+            "servicos": [
+                "banho"
+            ]
+        },
+        {
+            "nome": "Atum",
+            "tipo": "Cachorro",
+            "idade": 3,
+            "raca": "Labrador",
+            "peso": 3,
+            "tutor": "Mel",
+            "contato": "(87)0000-0000",
+            "vacinado": false,
+            "servicos": [
+                "banho",
+                "tosa"
+            ]
+        }
+    ]
+}
